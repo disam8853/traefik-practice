@@ -1,0 +1,18 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ntu-alc-ingress
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`ntu-alc.minikube`) && (PathPrefix(`/web`) || Path(`/`))
+    kind: Rule
+    services:
+    - name: ntu-alc-client
+      port: 80
+  - match: Host(`ntu-alc.minikube`) && PathPrefix(`/`)
+    kind: Rule
+    services:
+    - name: ntu-alc-server
+      port: 3000

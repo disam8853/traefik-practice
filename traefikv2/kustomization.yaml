@@ -1,0 +1,8 @@
+namespace: app
+
+resources:
+  - crd.yaml
+  - rbac.yaml
+  - deployment.yaml
+  - service.yaml
+  - dashboard.yaml

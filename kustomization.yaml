@@ -1,0 +1,13 @@
+namespace: app
+
+secretGenerator:
+- name: tls-cert
+  files:
+  - tls.crt=ssl/tls.crt
+  - tls.key=ssl/tls.key
+  type: kubernetes.io/tls
+
+resources:
+- namespace.yaml
+- traefikv2
+- ntu-alc

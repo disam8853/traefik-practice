@@ -1,0 +1,15 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: dashboard
+  namespace: app
+spec:
+  entryPoints:
+    - web
+  routes:
+    # - match: Host(`traefik.minikube`)
+    - match: Path(`/`)
+      kind: Rule
+      services:
+        - name: traefik
+          port: admin

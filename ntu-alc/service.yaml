@@ -1,0 +1,22 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: ntu-alc-client
+spec:
+  selector:
+    k8s-app: ntu-alc-client
+  ports:
+    - protocol: TCP
+      port: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: ntu-alc-server
+spec:
+  selector:
+    k8s-app: ntu-alc-server
+  ports:
+    - protocol: TCP
+      port: 3000
